@@ -1,0 +1,28 @@
+{
+  "name": "fis3-preprocessor-define",
+  "version": "1.0.0",
+  "description": "A preprocessor plugin for fis3 to replace define variables.",
+  "keywords": [
+    "fis3",
+    "fis3-preprocessor-define",
+    "fis3-preprocessor",
+    "define",
+    "preprocessor"
+  ],
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccqgithub/fis3-preprocessor-define.git"
+  },
+  "author": "Season Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccqgithub/fis3-preprocessor-define/issues"
+  },
+  "homepage": "https://github.com/ccqgithub/fis3-preprocessor-define#readme"
+}
