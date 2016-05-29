@@ -2,21 +2,35 @@ var fs = require('fs');
 var parse = require('./index');
 var content = fs.readFileSync('./test/src.js');
 
-content = String(content);
-fs.writeFile('./test/build.js', parse(content, null, {
-  'process.env': {
-    NODE_ENV: JSON.stringify('production'),
-    TEST_FUN: function () {
-      alert(1)
+var config = {
+  defines: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    'FUN': function() {
+      console.log('fun');
     },
-    TEST_OBJ: {
-      a: 1,
-      b: 3,
-      c: 3
+    OBJECT: {
+      a: 'a',
+      b: 'b',
+      c: 'c'
     },
-    test_obj: {
-      a: 1
-    }
+    STR: JSON.stringify('i am comming !'),
+    NULL: null,
+    UNDEFINED: undefined,
+    TEST: 'window.test'
   },
-  'TEST_ENV': JSON.stringify('test_env')
-}));
+  replacers: [
+    {
+      pattern: 'hello world !',
+      replacer: 'HELLO WORLD !'
+    },
+    {
+      pattern: /hello ([ABCD]) ([ABCD]) ([ABCD]) ([ABCD]) !/ig,
+      replacer: function($0, $1, $2, $3, $4) {
+        return 'hello ' + $1 + ' `I AM B` ' + $3 + ' ' + $4 + ' !';
+      }
+    }
+  ]
+};
+
+content = String(content);
+fs.writeFile('./test/build.js', parse(content, null, config));

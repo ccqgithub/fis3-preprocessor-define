@@ -1,17 +1,33 @@
-var p = process;
+if ("production" == 'test') {
+  console.log('ha ha ha !')
+}
 
-var env = {"NODE_ENV":"production","TEST_FUN":(function () {
-      alert(1)
-    }),"TEST_OBJ":{"a":1,"b":3,"c":3},"test_obj":{"a":1}}
+// defines
+var fun = (function () {
+      console.log('fun');
+    })
+var obj = {"a":a,"b":b,"c":c}
+var str = "i am comming !"
+var nul = null
+var udf = undefined
 
-var node_env = "production";
+// has prefix, not replace
+var a = prefix.TEST
+var b = prefix
+.
+TEST
 
-var test_env ="test_env";
+// has suffix
+var c = window.test.suffix
+var d = window.test
+.
+suffix
+var e = window.test['suffix']
 
-var test_fun = (function () {
-      alert(1)
-    });
+// not suffix
+var f = window.test
+['suffix']
 
-var test_obj = {"a":1,"b":3,"c":3};
-
-var test_other = process.env.TEST_OTHER;
+// replacers
+var replaceA = 'HELLO WORLD !';
+var replaceB = 'hello A `I AM B` C D !';

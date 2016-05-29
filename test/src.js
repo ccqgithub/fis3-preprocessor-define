@@ -1,13 +1,31 @@
-var p = process;
+if (process.env.NODE_ENV == 'test') {
+  console.log('ha ha ha !')
+}
 
-var env = process.env;
+// defines
+var fun = FUN
+var obj = OBJECT
+var str = STR
+var nul = NULL
+var udf = UNDEFINED
 
-var node_env = process.env.NODE_ENV;
+// has prefix, not replace
+var a = prefix.TEST
+var b = prefix
+.
+TEST
 
-var test_env = TEST_ENV;
+// has suffix
+var c = TEST.suffix
+var d = TEST
+.
+suffix
+var e = TEST['suffix']
 
-var test_fun = process.env.TEST_FUN;
+// not suffix
+var f = TEST
+['suffix']
 
-var test_obj = process.env.TEST_OBJ;
-
-var test_other = process.env.TEST_OTHER;
+// replacers
+var replaceA = 'hello world !';
+var replaceB = 'hello A B C D !';
