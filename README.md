@@ -16,7 +16,7 @@ fis.media('test', {
     defines: {
       'process.env.NODE_ENV': JSON.stringify('test')
     }
-  });
+  })
 });
 
 fis.media('prod', {
@@ -24,7 +24,7 @@ fis.media('prod', {
     defines: {
       'process.env.NODE_ENV': JSON.stringify('production')
     }
-  });
+  })
 });
 
 ```
